@@ -1,8 +1,8 @@
-Collect REST API Authentication
+Survey REST API Authentication
 ==========================
 Sign up
 -------
-The Survey REST API uses authentication from auth0.com. Before you can use the REST API you must register with email and password [here](https://itcauth0prod.eu.auth0.com/login?client=ST9a66rvqw3CA7hWFGJgEuqMARB8Kjfx&redirect_uri=https%3A%2F%2Fwww.intelecom.no). When done, please contact Intelecom Interactive Support to get access to the correct customer data.
+The Survey REST API uses authentication from [Auth0](https://www.auth0.com/). Before you can use the REST API you must register with email and password [here](https://itcauth0prod.eu.auth0.com/login?client=ST9a66rvqw3CA7hWFGJgEuqMARB8Kjfx&redirect_uri=https%3A%2F%2Fwww.intelecom.no). When done, please contact Intelecom Interactive Support to get access to the correct customer data.
 
 Get access token
 ----------------
@@ -44,4 +44,4 @@ To authenticate to the Survey API add the following header to your requests:
 Authorization: Bearer <id_token from response above>
 ```
 
-This access token is only valid for a limited time, and must be renewed when you receive a HTTP status code 401 (not authorized) from the Collect API. To renew the access token you must follow the procedure described above for "Get access token".
+This access token is only valid for a limited time, and must be renewed when you receive a HTTP status code 401 (not authorized) from the Survey API. To renew the access token you must follow the procedure described above for "Get access token".
