@@ -1,169 +1,80 @@
-# Collect Push API
+# Survey Push API
 
-The Collect push API is a module in the Collect platform that triggers at 5 minutes intervals and sends any new data over to a customer server using HTTP(S) GET or HTTP(S) POST with JSON data. If no new data is available, no requests will be sent.
+The survey push API is a module in the survey platform that triggers at 5 minutes intervals and sends any new data over to a customer server using HTTP(S) POST with JSON data. If no new data is available, no requests will be sent.
 
 The server side will have to respond with a HTTP 200 ok if the request was successfully received, if any HTTP error codes are returned then the request will be retried on the next trigger. 
 
-![](http://i.imgur.com/205JOAi.png)
 
-The API is configurable from the Collect adminweb and depending on the type of activity can send two types of data:
+## Property list
 
-1. Standard Collect data - Information about new donations / donators
-2. Member data - Information about new members
-
-If you have a service that is using both modes it is possible to set up multiple triggers. Please refer to the Connect user manual for more information about how to configure the API from the adminweb. 
-
-### Definitions
 <table>
-<tr><th>Term</th><th>Description</th></tr>	
-<tr><td>Activity</td><td>A Collect service consists of one or more activities. An activity might be a SMS service for donations, a web donation form or a SMS service for recruiting, billing and communicating with a member network.</td></tr>	
-<tr><td>Donator</td><td>A user donating an amount to an activity</td></tr>	
-<tr><td>Collection unit</td><td>A digital analog to a collection tin. For activities where there is for example just one keyword to donate to there will only exist one collection unit for the activity</td></tr>	
-<tr><td>Collector</td><td>The person that is requesting / handles the donation for the donator. Like for collection unit there will in many cases only be a default colletor. </td></tr>	
-<tr><td>Member</td><td>A user joining an activity as member. For example for recurring donations or starting a NGO membership</td></tr>	
+<tr><th>Property Name</th><th>Data Type</th><th>Description</th></tr>	
+<tr><td>id</td><td>Integer</td><td>Unique integer identifier for survey</td></tr>	
+<tr><td>surveyid</td><td>Integer</td><td>Manual survey id</td></tr>		
+<tr><td>agentid</td><td>String</td><td>Identifier for agent</td></tr>
+<tr><td>queue</td><td>String</td><td>Identifier for queue</td></tr>	
+<tr><td>rating</td><td>String</td><td>Enduser's score</td></tr>
+<tr><td>response</td><td>String</td><td>Enduser's reply</td></tr>
+<tr><td>smsSentDate</td><td>String</td><td>Timestamp of the first SMS sent to the enduser</td>
+<tr><td>team</td><td>String</td><td>Identifier for team</td></tr></tr>
+<tr><td>follow_up_response</td><td>String</td><td>Enduser's follow up response</td></tr>
+<tr><td>name</td><td>String</td><td>Enduser's name</td></tr>
+<tr><td>address</td><td>String</td><td>Enduser's address</td></tr>
+<tr><td>street</td><td>String</td><td>Enduser's street name</td></tr>
+<tr><td>housenumber</td><td>String</td><td>Enduser's housenumber</td></tr>
+<tr><td>entry</td><td>String</td><td>Enduser's entry</td></tr>
+<tr><td>postnumber</td><td>String</td><td>Enduser's post number</td></tr>	
+<tr><td>postArea</td><td>String</td><td>Enduser's post area</td></tr>
+<tr><td>extraParamName1</td><td>String</td><td>1. extra parameter name</td></tr>
+<tr><td>extraParamName2</td><td>String</td><td>2. extra parameter name</td></tr>
+<tr><td>extraParamName3</td><td>String</td><td>3. extra parameter name</td></tr>
+<tr><td>extraParamName4</td><td>String</td><td>4. extra parameter name</td></tr>
+<tr><td>extraParamName5</td><td>String</td><td>5. extra parameter name</td></tr>
+<tr><td>extraParamValue1</td><td>String</td><td>1. extra value</td></tr>
+<tr><td>extraParamValue2</td><td>String</td><td>2. extra value</td></tr>
+<tr><td>extraParamValue3</td><td>String</td><td>3. extra value</td></tr>
+<tr><td>extraParamValue4</td><td>String</td><td>4. extra value</td></tr>
+<tr><td>extraParamValue5</td><td>String</td><td>5. extra value</td></tr>
+<tr><td>comment</td><td>String</td><td>Your comment</td>
+<tr><td>updated</td><td>String</td><td>Last modified</td>
 </table>
 
 
-## Standard Collect mode (Donation) - Parameter list
+### Example - Push of survey data using HTTP(S) POST with JSON
 
-<table>
-<tr><th>Parameter Name</th><th>Data Type</th><th>Description</th><th>Mandatory</th></tr>	
-<tr><td>id</td><td>Integer</td><td>Unique integer identifier for donation</td><td>Yes</td></tr>	
-<tr><td>serviceId</td><td>Integer</td><td>SMS service id</td><td>Yes</td></tr>		
-<tr><td>moMessageId</td><td>String</td><td>Identifier for incoming SMS message</td><td>Yes</td></tr>
-<tr><td>billingMessageId</td><td>String</td><td>Identifier for billing SMS message</td><td>No</td></tr>	
-<tr><td>firstName</td><td>String</td><td>First name of the donator</td><td>No</td></tr>	
-<tr><td>lastName</td><td>String</td><td>Last name of the donator</td><td>No</td></tr>	
-<tr><td>address</td><td>String</td><td>Address of the donator</td><td>No</td></tr>	
-<tr><td>areaCode</td><td>String</td><td>Areacode of the donator</td><td>No</td></tr>	
-<tr><td>city</td><td>String</td><td>City of the donator</td><td>No</td></tr>	
-<tr><td>activityId</td><td>Integer</td><td>Identifier for the activity</td><td>Yes</td></tr>	
-<tr><td>activityType</td><td>String</td><td>Type of activity (collect or member)</td><td>Yes</td></tr>	
-<tr><td>activityGuid</td><td>String</td><td>GUID for the activity</td><td>Yes</td></tr>	
-<tr><td>activityName</td><td>String</td><td>The name of the activity</td><td>Yes</td></tr>	
-<tr><td>activityInvoiceName</td><td>String</td><td>Invoice text (on the Intelecom invoice)</td><td>No</td></tr>	
-<tr><td>collectionUnitId</td><td>Integer</td><td>Identifier for the collection unit</td><td>Yes</td></tr>	
-<tr><td>collectionUnitGuid</td><td>String</td><td>GUID for the collection unit</td><td>Yes</td></tr>	
-<tr><td>collectionUnitCode</td><td>String</td><td>Code for the collection unit</td><td>Yes</td></tr>	
-<tr><td>collectorId</td><td>Integer</td><td>Id of the collector</td><td>Yes</td></tr>	
-<tr><td>collectorName</td><td>String</td><td>Name of the collector</td><td>No</td></tr>	
-<tr><td>collectorNumber</td><td>Integer</td><td>Number of the donator</td><td>No</td></tr>	
-<tr><td>msisdn</td><td>String</td><td>Mobile phone number of the donator</td><td>Yes</td></tr>	
-<tr><td>orderId</td><td>Integer</td><td>Order identifier</td><td>Yes</td></tr>	
-<tr><td>orderDate</td><td>Date</td><td>The data the order was processed</td><td>Yes</td></tr>	
-<tr><td>price</td><td>Integer</td><td>Price of the billing message</td><td>Yes</td></tr>	
-<tr><td>isDelivered</td><td>Boolean</td><td>True if the billing message was delivered</td><td>Yes</td></tr>	
-<tr><td>isProcessed</td><td>Boolean</td><td>True if the order has been processed</td><td>Yes</td></tr>	
-<tr><td>moKeyword</td><td>String</td><td>Keyword used when sending the donation SMS</td><td>Yes</td></tr>	
-</table>
-
-
-### Example Request - Push of donation data using HTTP(S) GET
-
-	http://customer.server-url.com?id=256213&serviceId=1131&moMessageId=7a07w0002e00&billingMessageId=7a02g1fm7300&firstName=Intelecom++AS&lastName=Group&address=Brynsveien+13&areaCode=0667&city=Oslo&activityId=492&activityType=CollectActivity&activityGuid=07113B9A-7238-4A65-AD56-543DAD01470B&activityName=Test+innsamling&activityInvoiceName=Test+innsamling&collectionUnitId=4250&collectionUnitGuid=70DD51D3-960A-4A97-BBA5-B7DEAA6BF472&collectionUnitCode=23&collectorId=34&collectorName=Test&collectorNumber=234&msisdn=%2B4799999999&orderId=254265&orderDate=2016-02-04+09%3A27%3A28.653&price=100&isDelivered=true&isProcessed=false&moKeyword=grmkunst
-
-### Example - Push of donation data using HTTP(S) POST with JSON
-
-	[{
-		"id": 256213,
-		"serviceId": 2731,
-		"moMessageId": "7f07m0001s00",
-		"moMessageContent": "test",
-		"moKeyword": "grmkunst",
-		"billingMessageId": "7v02g1hm7s00",
-		"firstName": "Intelecom",
-		"lastName": "Group AS",
-		"address": "Brynsveien13",
-		"areaCode": "0667",
-		"city": "Oslo",
-		"activityId": 492,
-		"activityType": "CollectActivity",
-		"activityGuid": "07223B9A-7738-4B65-AD56-543DAD01470B",
-		"activityName": "Test innsamling",
-		"activityInvoiceName": "Test innsamling",
-		"collectionUnitId": 4250,
-		"collectionUnitGuid": "70EE51D3-960A-4C97-BBA5-B7DEAA6BF472",
-		"collectionUnitCode": "12",
-		"collectorId": 34,
-		"collectorName": "Bjarne",
-		"collectorNumber": 23,
-		"msisdn": "+4799999999",
-		"orderId": "254265",
-		"orderDate": "2016-02-04 09:27:28.653",
-		"price": 100,
-		"isDelivered": true,
-		"isDone": true,
-		"isProcessed": false,
-		"isSendtToCustomer": false
-	}]
-
-## Member mode - Parameter list
-
-
-<table>
-<tr><th>Parameter Name</th><th>Data Type</th><th>Description</th><th>Mandatory</th></tr>	
-<tr><td>memberId</td><td>Integer</td><td>Unique integer identifier for member</td><td>Yes</td></tr>	
-<tr><td>activityId</td><td>Integer</td><td>Identifier for the activity</td><td>Yes</td></tr>
-<tr><td>serviceId</td><td>Integer</td><td>SMS service id</td><td>Yes</td></tr>		
-<tr><td>msisdn</td><td>String</td><td>Members mobile phone number</td><td>No</td></tr>	
-<tr><td>firstName</td><td>String</td><td>First name of the member</td><td>No</td></tr>	
-<tr><td>lastName</td><td>String</td><td>Last name of the member</td><td>No</td></tr>	
-<tr><td>address</td><td>String</td><td>Address of the member</td><td>No</td></tr>	
-<tr><td>postCode</td><td>String</td><td>Areacode of the member</td><td>No</td></tr>	
-<tr><td>town</td><td>String</td><td>City of the member</td><td>No</td></tr>	
-<tr><td>email</td><td>String</td><td>Members email address</td><td>No</td></tr>	
-<tr><td>guuid</td><td>String</td><td>GUID for the member</td><td>Yes</td></tr>	
-<tr><td>moMessageId</td><td>String</td><td>Identifier for incoming SMS message</td><td>Yes</td></tr>
-<tr><td>memberStatus</td><td>String</td><td>active -> Active Member </br> pending -> Pending confirmation</br>inactive -> Inactive Member</td><td>Yes</td></tr>	
-</table>
-
-
-### Example Request - Push of member data using HTTP(S) GET
-
-http://customer.server-url.com/collect?memberId=5856&activityId=451&serviceId=1111&msisdn=+4799999999&firstname=Ola&lastname=Nordmann&address=Kirkegaten+30&postcode=4878&town=Grimstad&email=demo@test.com&guuid=1554A144-6DFD-2277-5231-F54151232BF9&moMessageId=1a04e02ibw0&memberStatus=active
-
-### Example Request - Push of member data using HTTP(S) POST with JSON
-
-	Content-Type: application/json
-
-	[{
-	"memberId": 3830,
-	"activityId": 434,
-	"serviceId": 2731,
-	"msisdn": "+4799999997",
-	"guuid": "B6146BA6-0CBC-4174-B253-7BF0C532D477",
-	"moMessageId": "7e07a001ae00",
-	"memberStatus": "active"
-	},
 	{
-	"memberId": 5853,
-	"activityId": 451,
-	"serviceId": 2731,
-	"msisdn": "+4799999998",
-	"firstname": "Ben",
-	"lastname": "Harper",
-	"address": "Kirkegaten 11",
-	"postcode": "4878",
-	"town": "Grimstad",
-	"email": "ben.harper@test.com",
-	"guuid": "7EAF6sD2-6110-4121-ABFB-191424CD17E7",
-	"moMessageId": "7g01o02eaa00",
-	"memberStatus": "active"
-	},
-	{
-	"memberId": 5856,
-	"activityId": 451,
-	"serviceId": 2731,
-	"msisdn": "+4799999999",
-	"firstname": "Geir",
-	"lastname": "Hansen",
-	"address": "Grillgaten 30A",
-	"postcode": "0611",
-	"town": "Oslo",
-	"guuid": "1554A141-6AFD-4C73-8231-F54159211BF9",
-	"moMessageId": "7h04b02ibu00",
-	"memberStatus": "active"
-	}]
-
-## Implementing the server side
-
+    "callcenterSurveyList": [
+        {
+            "id": 4483,
+            "surveyid": 0,
+            "msisdn": "+4712345678",
+            "agentid": "agent1",
+            "queue": "queue1",
+            "rating": "8",
+            "response": "5 abc",
+            "smsSentDate": "2016-10-21T15:23:43.423+0200",
+            "team": "team1",
+            "follow_up_response": null,
+            "name": "Minh Do Le",
+            "address": "Brynsveien 13 ; 0667 Oslo",
+            "street": "Brynsveien",
+		    "housenumber": "13",
+			"entry": null,
+		    "postnumber": "0667",
+		    "postArea": "Oslo",
+            "extraParamName1": "waitingTime",
+            "extraParamName2": "callDuration",
+            "extraParamName3": null,
+            "extraParamName4": null,
+            "extraParamName5": null,
+            "extraParamValue1": "01:12:50",
+            "extraParamValue2": "01:12:50",
+            "extraParamValue3": null,
+            "extraParamValue4": null,
+            "extraParamValue5": null,
+            "comment": "OK",
+      		"updated": "2016-10-21T15:27:04.387+0200"      
+        }
+    ],
+    "manualSurveyList": []
+	}
