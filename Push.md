@@ -13,18 +13,18 @@ The server side will have to respond with a HTTP 200 ok if the request was succe
 <tr><td>surveyid</td><td>Integer</td><td>Manual survey id</td></tr>		
 <tr><td>agentid</td><td>String</td><td>Identifier for agent</td></tr>
 <tr><td>queue</td><td>String</td><td>Identifier for queue</td></tr>	
-<tr><td>rating</td><td>String</td><td>Enduser's score</td></tr>
-<tr><td>response</td><td>String</td><td>Enduser's reply</td></tr>
-<tr><td>smsSentDate</td><td>String</td><td>Timestamp of the first SMS sent to the enduser</td>
+<tr><td>rating</td><td>String</td><td>End user's score</td></tr>
+<tr><td>response</td><td>String</td><td>End user's reply</td></tr>
+<tr><td>smsSentDate</td><td>String</td><td>Timestamp of the first SMS sent to the end user</td>
 <tr><td>team</td><td>String</td><td>Identifier for team</td></tr></tr>
-<tr><td>follow_up_response</td><td>String</td><td>Enduser's follow up response</td></tr>
-<tr><td>name</td><td>String</td><td>Enduser's name</td></tr>
-<tr><td>address</td><td>String</td><td>Enduser's address</td></tr>
-<tr><td>street</td><td>String</td><td>Enduser's street name</td></tr>
-<tr><td>housenumber</td><td>String</td><td>Enduser's housenumber</td></tr>
-<tr><td>entry</td><td>String</td><td>Enduser's entry</td></tr>
-<tr><td>postnumber</td><td>String</td><td>Enduser's post number</td></tr>	
-<tr><td>postArea</td><td>String</td><td>Enduser's post area</td></tr>
+<tr><td>follow_up_response</td><td>String</td><td>End user's follow up response</td></tr>
+<tr><td>name</td><td>String</td><td>End user's name</td></tr>
+<tr><td>address</td><td>String</td><td>End user's address</td></tr>
+<tr><td>street</td><td>String</td><td>End user's street name</td></tr>
+<tr><td>housenumber</td><td>String</td><td>End user's housenumber</td></tr>
+<tr><td>entry</td><td>String</td><td>End user's entry</td></tr>
+<tr><td>postnumber</td><td>String</td><td>End user's post number</td></tr>	
+<tr><td>postArea</td><td>String</td><td>End user's post area</td></tr>
 <tr><td>extraParamName1</td><td>String</td><td>1. extra parameter name</td></tr>
 <tr><td>extraParamName2</td><td>String</td><td>2. extra parameter name</td></tr>
 <tr><td>extraParamName3</td><td>String</td><td>3. extra parameter name</td></tr>
