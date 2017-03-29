@@ -32,7 +32,7 @@ At the moment we provide two APIs for integration:
 - [Rest API](Rest.md) - Integrate your system with our REST API.
 
 ### Contact us
-If you have any questions, please feel free to [contact us]("https://www.intelecom.no/vare-losninger/mobile-tjenester/sms/sms-api/kontakt/")
+If you have any questions, please feel free to [contact us](https://www.intelecom.no/vare-losninger/mobile-tjenester/sms/sms-api/kontakt/)
 
 You can also contact us by phone 03050 in Norway.
 
