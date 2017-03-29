@@ -1,5 +1,5 @@
 # Survey API
-
+![alt text](images/SMS_Survey_banner.png "SMS-Survey title")
 ### What is Survey?
 Survey is the perfect tool to measure your customers satisfaction, and at the same time highlights the areas to improve your staff`s skills and knowledge.
 
