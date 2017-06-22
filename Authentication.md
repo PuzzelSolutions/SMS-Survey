@@ -18,10 +18,10 @@ Content body:
 ```json
 {
   "username":    "<your username>",
-  "client_id":   "ST9a66rvqw3CA7hWFGJgEuqMARB8Kjfx",
+  "client_id":   "w5XrzQRm0aGkuNV4JfdKo9NDKGMEQJxd",
   "password":    "<your password>",
   "id_token":    "",
-  "connection":  "collect-api-database",
+  "connection":  "survey-api",
   "grant_type":  "password",
   "scope":       "openid",
   "device":      ""
