@@ -26,8 +26,9 @@ Welcome to the developer pages for the Intelecom Survey APIs. Here you will find
 
 ### Where to start?
 
-At the moment we provide two APIs for integration:
+At the moment we provide three APIs for integration:
 
+- [Send API](Integration.md) - sends a SMS to an enduser when the call is terminated.
 - [Push API](Push.md) - Pushes info about score to your server-side using HTTP POST or GET.
 - [Rest API](Rest.md) - Integrate your system with our REST API.
 
