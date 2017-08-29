@@ -52,6 +52,7 @@ POST with extra parameter:
 <tr><td>msisdn</td><td>String</td><td>valid cellphone number which the survey SMS will be sent to</td><td>mandatory</td></tr>	
 <tr><td>password</td><td>String</td><td>SMSSurvey service's password</td><td>mandatory</td></tr>	
 </table>
+
 ### Extra parameters
 <table>
 <tr><th>Parameter</th><th>Data Type</th><th>Description</th><th></th></tr>
@@ -61,10 +62,13 @@ POST with extra parameter:
 <tr><td>Parameter 4</td><td>String</td><td></td><td>optional</td></tr>
 <tr><td>Parameter 5</td><td>String</td><td></td><td>optional</td></tr>
 </table>
+
 ### It can be defined up to 5 extra parameters.
 Extra parameters must be registered at Puzzel in order to be displayed and must be sent in the same order as defined. Please URL encode parameters containing spaces with %20, for example: parameter 1 = call%20wait%20time, parameter 2= call%20duration.
+
 ### Request
 Content-Type is set to 'text/xml; charset=ISO-8859-1'
+
 ### HTTP POST Request
  <pre><code>POST http://80.232.75.135/customersurvey/RequestHandlerServlet HTTP/1.1
 Content-Type: text/xml; charset=ISO-8859-1
@@ -140,6 +144,7 @@ A survey request can be sent to the  SMS survey application by using the followi
 <tr><td>user_id</td><td>String</td><td>Identifier for Connect user (valid only for Intelecom Connect customers)</td><td>optional</td></tr>	
 <tr><td>related_iq_session</td><td>String</td><td>Identifier for Connect iq session (valid only for Intelecom Connect customers)</td><td>optional</td></tr>	
 </table>
+
 ### Extra parameters
 <table>
 <tr><th>Parameter</th><th>Data Type</th><th>Description</th><th></th></tr>
@@ -149,7 +154,9 @@ A survey request can be sent to the  SMS survey application by using the followi
 <tr><td>Parameter 4</td><td>String</td><td></td><td>optional</td></tr>
 <tr><td>Parameter 5</td><td>String</td><td></td><td>optional</td></tr>
 </table>
+
 ### It can be defined up to 5 extra parameters.
+
 Extra parameters must be registered at Puzzel in order to be displayed and must be sent in the same order as defined. Please URL encode parameters containing spaces with %20, for example: parameter 1 = call%20wait%20time, parameter 2= call%20duration.
 
 ### Request
