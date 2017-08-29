@@ -5,7 +5,7 @@ A survey request can be sent to the  SMS survey application by using either the 
 ![alt text](images/Survey_Integration.png "Survey integration")
 
 ## HTTP POST
- A survey request has to be sent to the following address in order to send a survey SMS to a enduser:
+ A survey request has to be sent to the following address in order to send a survey SMS to an end user:
 <pre><code>http://interactive.intele.com/customersurvey/RequestHandlerServlet</code></pre>
  
 Here is an example of the body of a POST request containing the following XML:
