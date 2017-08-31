@@ -188,7 +188,7 @@ Your server application can retrieve the values from the query string.
 
 ### Response
 The server responds with 200 OK HTTP status code indicating the request has succeeded.
-### HTTP POST Response
+### HTTP GET Response
 <pre><code>HTTP/1.1 200 OK
 Server: Apache-Coyote/1.1
 X-Powered-By: Servlet 2.4; JBoss-4.0.4.GA (build: CVSTag=JBoss_4_0_4_GA date=200605151000)/Tomcat-5.5
