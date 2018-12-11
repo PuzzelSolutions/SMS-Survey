@@ -18,7 +18,7 @@ The API uses [Auth0](https://auth0.com/) for authentication and you will need to
 </table>
 
 ### Request Example
-https://{survey-host}/survey/ws/service/35?from=2016-05-08T00:00:00.000%2B0200 
+https://{survey-host}/survey/rs/service/35?from=2016-05-08T00:00:00.000%2B0200 
 
 ## Property list
 
