@@ -2,7 +2,7 @@ Survey REST API Authentication
 ==========================
 Sign up
 -------
-The Survey REST API uses authentication from [Auth0](https://www.auth0.com/). Before you can use the REST API you must register with email and password [here](https://itcauth0prod.eu.auth0.com/login?client=w5XrzQRm0aGkuNV4JfdKo9NDKGMEQJxd&redirect_uri=https%3A%2F%2Fwww.intelecom.no). When done, please contact Intelecom Interactive Support to get access to the correct customer data.
+The Survey REST API uses authentication from [Auth0](https://www.auth0.com/). Before you can use the REST API you must register with email and password [here](https://itcauth0prod.eu.auth0.com/login?client=w5XrzQRm0aGkuNV4JfdKo9NDKGMEQJxd&redirect_uri=https%3A%2F%2Fwww.puzzel.com). When done, please contact Intelecom Interactive Support to get access to the correct customer data.
 
 Get access token
 ----------------
