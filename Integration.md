@@ -140,9 +140,9 @@ A survey request can be sent to the  SMS survey application by using the followi
 <tr><td>team</td><td>String</td><td>Identifier for team</td><td>optional</td></tr>
 <tr><td>msisdn</td><td>String</td><td>Valid cellphone number which the survey SMS will be sent to</td><td>mandatory</td></tr>	
 <tr><td>password</td><td>String</td><td>SMSSurvey service's password</td><td>mandatory</td></tr>
-<tr><td>customer_key</td><td>String</td><td>Identifier for Connect customer (valid only for Puzzel Contact Center customers)</td><td>optional</td></tr>
-<tr><td>user_id</td><td>String</td><td>Identifier for Connect user (valid only for Puzzel Contact Center customers)</td><td>optional</td></tr>	
-<tr><td>related_iq_session</td><td>String</td><td>Identifier for Connect iq session (valid only for Puzzel Contact Center customers)</td><td>optional</td></tr>	
+<tr><td>customer_key</td><td>String</td><td>Identifier for PCC customer (valid only for Puzzel Contact Center (PCC) customers)</td><td>optional</td></tr>
+<tr><td>user_id</td><td>String</td><td>Identifier for PCC user (valid only for Puzzel Contact Center customers)</td><td>optional</td></tr>	
+<tr><td>related_iq_session</td><td>String</td><td>Identifier for PCC iq session (valid only for Puzzel Contact Center customers)</td><td>optional</td></tr>	
 </table>
 
 ### Extra parameters
