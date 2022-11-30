@@ -6,7 +6,7 @@ A survey request can be sent to the  SMS survey application by using either the 
 
 ## HTTP POST
  A survey request has to be sent to the following address in order to send a survey SMS to an end user:
-<pre><code>http://interactive.intele.com/customersurvey/RequestHandlerServlet</code></pre>
+<pre><code>https://feedback.puzzel.com/survey/v1/customersurvey/RequestHandlerServlet</code></pre>
  
 Here is an example of the body of a POST request containing the following XML:
 
@@ -15,9 +15,9 @@ Here is an example of the body of a POST request containing the following XML:
     &lt;caller&gt;
         &lt;queue&gt;[Queue]&lt;/queue&gt;
         &lt;agent&gt;[agent]&lt;/agent&gt;
-	&lt;team&gt;[team]&lt;/team&gt;              
-	&lt;msisdn&gt;[msisdn]&lt;/msisdn&gt;
-	&lt;password&gt;[xxxx]&lt;&lt;/password&gt;
+        &lt;team&gt;[team]&lt;/team&gt;              
+        &lt;msisdn&gt;[msisdn]&lt;/msisdn&gt;
+        &lt;password&gt;[xxxx]&lt;&lt;/password&gt;
     &lt;/caller&gt;
 &lt;/log&gt;
 </code></pre>
@@ -70,39 +70,35 @@ Extra parameters must be registered at Puzzel in order to be displayed and must 
 Content-Type is set to 'text/xml; charset=ISO-8859-1'
 
 ### HTTP POST Request
- <pre><code>POST http://80.232.75.135/customersurvey/RequestHandlerServlet HTTP/1.1
+ <pre><code>POST https://feedback.puzzel.com/survey/v1/customersurvey/RequestHandlerServlet HTTP/1.1
 Content-Type: text/xml; charset=ISO-8859-1
-Host: 80.232.75.135
-Content-Length: 214
 
 &lt;?xml version="1.0" encoding="ISO-8859-1" ?&gt;
 &lt;log serviceid="2106"&gt;
     &lt;caller&gt;
         &lt;queue&gt;queue1&lt;/queue&gt;
         &lt;agent&gt;agent1&lt;/agent&gt;
-	&lt;team&gt;team1&lt;/team&gt;              
-	&lt;msisdn&gt;90937954&lt;/msisdn&gt;
-	&lt;password&gt;xxxx&lt;&lt;/password&gt;
+        &lt;team&gt;team1&lt;/team&gt;              
+        &lt;msisdn&gt;90937954&lt;/msisdn&gt;
+        &lt;password&gt;xxxx&lt;&lt;/password&gt;
     &lt;/caller&gt;
 &lt;/log&gt;
 </code></pre>
 
-### Eksempel med ekstra parameters
- <pre><code>POST http://80.232.75.135/customersurvey/RequestHandlerServlet HTTP/1.1
+### Example with extra parameters
+ <pre><code>POST https://feedback.puzzel.com/survey/v1/customersurvey/RequestHandlerServlet HTTP/1.1
 Content-Type: text/xml; charset=ISO-8859-1
-Host: 80.232.75.135
-Content-Length: 214
 
 &lt;?xml version="1.0" encoding="ISO-8859-1" ?&gt;
 &lt;log serviceid="2106"&gt;
     &lt;caller&gt;
         &lt;queue&gt;queue1&lt;/queue&gt;
         &lt;agent&gt;agent1&lt;/agent&gt;
-	&lt;team&gt;team1&lt;/team&gt;              
-	&lt;msisdn&gt;90937954&lt;/msisdn&gt;
-	&lt;password&gt;xxxx&lt;&lt;/password&gt;
-	&lt;waittime&gt;xxxx&lt;&lt;/waittime&gt;
-	&lt;callduration&gt;xxxx&lt;&lt;/callduration&gt;
+        &lt;team&gt;team1&lt;/team&gt;              
+        &lt;msisdn&gt;90937954&lt;/msisdn&gt;
+        &lt;password&gt;xxxx&lt;&lt;/password&gt;
+        &lt;waittime&gt;xxxx&lt;&lt;/waittime&gt;
+        &lt;callduration&gt;xxxx&lt;&lt;/callduration&gt;
     &lt;/caller&gt;
 &lt;/log&gt;
 </code></pre>
@@ -110,26 +106,11 @@ Content-Length: 214
 
 ### Response
 The server responds with 200 OK HTTP status code indicating the request has succeeded.
-### HTTP POST Response
-<pre><code>HTTP/1.1 200 OK
-Server: Apache-Coyote/1.1
-X-Powered-By: Servlet 2.4; JBoss-4.0.4.GA (build: CVSTag=JBoss_4_0_4_GA date=200605151000)/Tomcat-5.5
-Content-Type: text/html;charset=ISO-8859-1
-Date: Wed, 10 Apr 2013 06:45:56 GMT
-Content-Length: 238
 
-&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"&gt;
-&lt;HTML&gt;
-  &lt;HEAD&gt;&lt;TITLE&gt;A Servlet&lt;/TITLE&gt;&lt;/HEAD&gt;
-  &lt;BODY&gt;
-    This is class customer.satisfaction.survey.handler.RequestHandler, using the POST method
-  &lt;/BODY&gt;
-&lt;/HTML&gt;
-</code></pre>
 
 ### HTTP GET
 A survey request can be sent to the  SMS survey application by using the following URL: 
-<pre><code>http://interactive.intele.com/customersurvey/RequestHandlerServlet?serviceid=2106&queue=1&agentid=1&msisdn=99999999&password=xxxx&customer_key=customer&user_id=xxxxx&related_iq_session=session</code></pre>
+<pre><code>https://feedback.puzzel.com/survey/v1/customersurvey/RequestHandlerServlet?serviceid=2106&queue=1&agentid=1&msisdn=99999999&password=xxxx&customer_key=customer&user_id=xxxxx&related_iq_session=session</code></pre>
 
 ### Parameter
 <table>
@@ -161,22 +142,22 @@ Extra parameters must be registered at Puzzel in order to be displayed and must 
 
 ### Request
 ### HTTP GET Request
-<pre><code>GET http://interactive.intele.com/customersurvey/RequestHandlerServlet?serviceid=XXXX&queue=1&agentid=1&team=1&msisdn=99999999&password=XXXX&customer_key=customer&user_id=xxxxx&related_iq_session=session
+<pre><code>GET https://feedback.puzzel.com/survey/v1/customersurvey/RequestHandlerServlet?serviceid=XXXX&queue=1&agentid=1&team=1&msisdn=99999999&password=XXXX&customer_key=customer&user_id=xxxxx&related_iq_session=session
 
 HTTP/1.1
-Host: interactive.intele.com
+Host: feedback.puzzel.com
 </code></pre>
 
-### Request med ekstra parameter
-<pre><code>GET http://interactive.intele.com/customersurvey/RequestHandlerServlet?serviceid=XXXX&queue=1&agentid=1&team=1&msisdn=99999999&password=XXXX&customer_key=customer&user_id=xxxxx&related_iq_session=session&call%20wait%20time=xxxx&call%20duration=xxxx
+### Request with extra parameters
+<pre><code>GET https://feedback.puzzel.com/survey/v1/customersurvey/RequestHandlerServlet?serviceid=XXXX&queue=1&agentid=1&team=1&msisdn=99999999&password=XXXX&customer_key=customer&user_id=xxxxx&related_iq_session=session&call%20wait%20time=xxxx&call%20duration=xxxx
 
 HTTP/1.1
-Host: interactive.intele.com
+Host: feedback.puzzel.com
 </code></pre>
 
 ### GET live score
 <pre><code>Your application must support the HTTP GET method.
-Send your URL (location of your server application) to support.interactive@intele.com
+Send your URL (location of your server application) to Puzzel's support team.
 For example: http://foo.com/yourapplication
 </code></pre>
 ### Retrieving query string values
@@ -188,32 +169,3 @@ Your server application can retrieve the values from the query string.
 
 ### Response
 The server responds with 200 OK HTTP status code indicating the request has succeeded.
-### HTTP GET Response
-<pre><code>HTTP/1.1 200 OK
-Server: Apache-Coyote/1.1
-X-Powered-By: Servlet 2.4; JBoss-4.0.4.GA (build: CVSTag=JBoss_4_0_4_GA date=200605151000)/Tomcat-5.5
-Content-Type: text/html;charset=ISO-8859-1
-Date: Wed, 10 Apr 2013 12:08:44 GMT
-Content-Length: 237
-
-&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"&gt;
-&lt;HTML&gt;
-  &lt;HEAD&gt;&lt;TITLE&gt;A Servlet&lt;/TITLE&gt;&lt;/HEAD&gt;
-  &lt;BODY&gt;
-    This is class customer.satisfaction.survey.handler.RequestHandler, using the GET method
-  &lt;/BODY&gt;
-&lt;/HTML&gt;
-</code></pre>
-
-
-
-
-
-
-
-
-
-
-
- 
-
