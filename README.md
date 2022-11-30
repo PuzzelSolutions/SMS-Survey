@@ -1,18 +1,18 @@
 # Survey API
 ![alt text](images/SMS_Survey_banner.png "SMS-Survey title")
 ### What is Survey?
-Survey is the perfect tool to measure your customers satisfaction, and at the same time highlights the areas to improve your staff`s skills and knowledge.
+Survey is the perfect tool to measure your customers satisfaction, and at the same time highlights the areas to improve your staff's skills and knowledge.
 
-With SMS Survey, customer satisfaction is measured immediately after the customer has been in contact with your company. The customer receives a SMS with question regarding what you want to measure. Scores and comments from the customer along with information about the call such as  agent, department, call time, queue time and other information you wish to highlight. 
+With SMS Survey, customer satisfaction is measured immediately after the customer has been in contact with your company. The customer receives a SMS with a question regarding what you want to measure. Scores and comments from the customer along with information about the call such as agent, department, call time, queue time and other information you wish to highlight. 
 
 Data is processed and presented in statistics and comprehensible charts, which provides a good overview of how satisfied your customers are at any time, and which agents who more likely need more expertise. SMS Survey also has NPS statistics which is considered to be a highly regarded customer loyalty metric.
 
-Please see our [webpages](https://www.intelecom.no/vare-losninger/mobile-tjenester/sms/sms-survey/) for further information.
+Please see our [webpages](https://www.puzzel.com/mobile-messaging/sms-survey/) for further information.
 
 ### Why use Survey?
 Introduction of customer satisfaction measurement and visualization of results internally, can affect an organization vigorously. Staff focuses on the importance of accommodate customer expectation.
 
-Prevent Churn and negative coverage in social media. In contrast to previous, negative publicity is accumulated and searchable in search engines on the internet
+Prevent churn and negative coverage in social media. In contrast to previous years, negative publicity is accumulated and searchable in search engines on the internet.
 
 ### What is this used for?
 Survey is most often used in combination with a Callcenter. Customer satisfaction is measured immediately after the customer has been in contact. Survey may also be used with your support/CRM tool, sending the customer a survey after a ticket is closed. Or after a taxi ride, bus, plane or ferry.
@@ -35,11 +35,6 @@ At the moment we provide three APIs for integration:
 ### Contact us
 If you have any questions, please feel free to [contact us](https://www.puzzel.com/no/om-puzzel/kontakt-oss/)
 
-You can also contact us by phone 21898989 in Norway.
+You can also contact us by phone +4721898989.
 
 [www.puzzel.com](www.puzzel.com/no)
-
-
-
-
-
